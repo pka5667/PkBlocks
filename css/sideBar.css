@@ -5,12 +5,16 @@
     flex-direction: column;
     position: fixed;
     background-color: #edf2f7;
-    overflow: hidden;
+    overflow-x: hidden;
     padding-top: 15px;
     transition: left 0.3s;
     z-index: 1;
     top: 0;
 }
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+  }
 
 .block-container {
     margin: 10px 20px;
