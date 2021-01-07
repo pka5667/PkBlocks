@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PkBlocks</title>
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/sideBar.css">
+    <link rel="stylesheet" href="css/codeFrame.css">
+    <link rel="stylesheet" href="css/utiles.css">
+</head>
+
+<body>
+    <div id="sidebar" class="sidebar">
+        <!-- container for blocks with category like blog,contac us,etc. inside that category name and buttons for perticular block -->
+        <div class="block-container">
+            <div class="block-category">BLOG</div>
+            <div class="block-list">
+                <button id="Blog1" class="block-item is-active" onclick="blockSelected('Blog','1')"></button>
+                <button id="Blog2" class="block-item" onclick="blockSelected('Blog','2')"></button>
+                <button id="Blog3" class="block-item" onclick="blockSelected('Blog','3')"></button>
+            </div>
+        </div>
+        <div class="block-container">
+            <div class="block-category">CONTACT</div>
+            <div class="block-list">
+                <button id="Contact1" class="block-item" onclick="blockSelected('Contact','1')"></button>
+                <button id="Contact2" class="block-item" onclick="blockSelected('Contact','2')"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <nav class="nav">
+            <div id="nav-left" class="nav nav-left" onclick="openSideBar()">
+                <button id="open-sidebar-button" class="sidebar-button"></button>
+                <button id="close-sidebar-button" class="sidebar-button"></button>
+                <div class="app-logo simple-text">PkBlocks</div>
+            </div>
+            <div class="nav nav-mid">
+                <button id="view-code" class="nav-btn simple-text" onclick="viewCode()">
+                        <svg class="nav-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M16 18L22 12 16 6"></path><path d="M8 6L2 12 8 18"></path></svg>
+                        View Code
+                    </button>
+                <button id="copy-code" class="nav-btn simple-text" onclick="copyToClipBoard()">
+                        <svg class="nav-svg" viewBox="0 0 25 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19.914 1h-18v19"></path><path d="M6 5v18h18V5z"></path></svg>
+                        Copy To Clipboard
+                    </button>
+                <button id="preview-code" class="nav-btn simple-text" onclick="preview()">
+                        <svg class="nav-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        Preview
+                    </button>
+            </div>
+            <div class="nav nav-right">
+                <div class="color-switcher">
+                    <button class="nav-color-btn bg-main-color" onclick="setMainColor('#6366f1')"></button>
+                    <button class="nav-color-btn bg-indigo" onclick="setMainColor('indigo')"></button>
+                    <button class="nav-color-btn bg-orange" onclick="setMainColor('orange')"></button>
+                    <button class="nav-color-btn bg-red" onclick="setMainColor('red')"></button>
+                    <button class="nav-color-btn bg-purple" onclick="setMainColor('purple')"></button>
+                    <button class="nav-color-btn bg-pink" onclick="setMainColor('pink')"></button>
+                </div>
+                <div class="device-switcher">
+                    <button class="device" id="device-desktop" onclick="desktop()">
+                        <svg class="device-icon" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8m-4-4v4"></path></svg>
+                    </button>
+                    <button class="device" id="device-tablet" onclick="tablet()">
+                        <svg class="device-icon" viewBox="0 0 24 24" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                    </button>
+                    <button class="device" id="device-mobile" onclick="mobile()">
+                        <svg class="device-icon" viewBox="0 0 24 24" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                    </button>
+                </div>
+                <button class="theme-switcher" onclick="themeSwitcher()">
+                    Theme
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="code-frame" class="code-frame">
+        <div id="frame-for-preview" class="frame-for-preview">
+            <iframe id="iframe" class="iframe" src="" frameborder="0"></iframe>
+        </div>
+        <pre>
+            <code id="frame-for-code" class="frame-for-code"></code>
+        </pre>
+        <div for="to copy code this area is needed">
+            <textarea type="text" id="copyText" value="" style="width: 1px;height: 1px;"></textarea>
+        </div>
+    </div>
+</body>
+<script src="js/sideMenu.js"></script>
+<script src="js/getSelectedBlockCode.js"></script>
+<script src="js/copyCode.js"></script>
+<script src="js/ColorSwitch.js"></script>
+<script src="js/device.js"></script>
+<script src="js/onLoad.js"></script>
+    
+</html>
